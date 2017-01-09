@@ -3,7 +3,7 @@
   "license": "GPL-3.0",
   "type": "magento-module",
   "description": "Magento Alerts",
-  "homepage": "https://bitbucket.org/pipedevnull/magealerts",
+  "homepage": "https://github.com/pipe-devnull/PdnAlerts",
   "require": {
     "php": ">=5.3",
     "magento-hackathon/magento-composer-installer": "*"

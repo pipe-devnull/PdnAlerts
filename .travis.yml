@@ -24,9 +24,3 @@ env:
     # - MAGENTO_VERSION=magento-mirror-1.7.0.2
 script:
   - curl -sSL https://raw.githubusercontent.com/AOEpeople/MageTestStand/plain_phpunit/setup.sh | bash
-notifications:
-  email:
-    recipients:
-      - travis@fabrizio-branca.de
-    on_success: always
-    on_failure: always
