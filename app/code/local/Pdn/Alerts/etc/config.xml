@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Pdn_Alerts>
+            <version>1.0.0</version>
+        </Pdn_Alerts>
+    </modules>
+    <global>
+
+        <models>
+            <alerts>
+                <class>Pdn_Alerts_Model</class>
+                <resourceModel>alerts_mysql4</resourceModel>
+            </alerts>
+            <alerts_mysql4>
+                <class>Pdn_Alerts_Model_Mysql4</class>
+                <entities>
+                    <stock_lowstockalert>
+                        <table>pdn_lowstock_alert</table>
+                    </stock_lowstockalert>
+                </entities>
+            </alerts_mysql4>
+        </models>
+
+        <helpers>
+            <alerts>
+                <class>Pdn_Alerts_Helper</class>
+            </alerts>
+        </helpers>
+
+        <resources>
+            <alerts_setup>
+                <setup>
+                    <module>Pdn_Alerts</module>
+                    <class>Pdn_Alerts_Model_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </alerts_setup>
+            <alerts_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </alerts_write>
+            <alerts_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </alerts_read>
+        </resources>
+
+    </global>
+
+    <crontab>
+        <jobs>
+            <alert_check>
+                <schedule><cron_expr>*/5 * * * *</cron_expr></schedule>
+                <run><model>alerts/observer::checkAlerts</model></run>
+            </alert_check>
+            <alert_purge>
+                <schedule><cron_expr>5 8 * * 6</cron_expr></schedule> 
+                <run><model>alerts/observer::purgeAlerts</model></run>
+            </alert_purge>
+        </jobs>
+    </crontab>
+
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <alerts translate="title" module="alerts">
+                                            <title>Manage PDN Alert settings</title>
+                                        </alerts>
+                                        <stock translate="title" module="alerts">
+                                            <title>Manage PDN Alert settings</title>
+                                        </stock>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+</config>

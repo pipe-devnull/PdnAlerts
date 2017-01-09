@@ -1,0 +1,18 @@
+{
+  "name": "pipedevnull/magealerts",
+  "license": "GPL-3.0",
+  "type": "magento-module",
+  "description": "Magento Alerts",
+  "homepage": "https://bitbucket.org/pipedevnull/magealerts",
+  "require": {
+    "php": ">=5.3",
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors": [
+    {
+      "name": "Ade",
+      "email": "ade@pipe-devnull.com",
+      "role": "Author/Maintainer"
+    }
+  ]
+}

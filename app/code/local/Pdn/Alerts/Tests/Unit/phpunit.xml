@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false" bootstrap="../../../../../../../local/lib/UnitTestBootstrap.php">
+<!-- <testsuites>
+  <testsuite name="">
+  	<directory>Model</directory>
+  	<directory>Helper</directory>
+  </testsuite>
+</testsuites> -->
+</phpunit>

@@ -1,0 +1,3 @@
+app/code/local/Pdn/Alerts/                                      app/code/local/Pdn/Alerts/
+app/etc/modules/Pdn_Alerts.xml                                  app/etc/modules/Pdn_Alerts.xml
+dev/tests/pdn_alerts                                            dev/tests/pdn_alerts
